@@ -6,6 +6,8 @@
 // @author       Takidog
 // @match        https://webap0.nkust.edu.tw/nkust/index_main.html
 // @match        https://webap0.nkust.edu.tw/nkust/index.html
+// @match        https://webap.nkust.edu.tw/nkust/index_main.html
+// @match        https://webap.nkust.edu.tw/nkust/index.html
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @require      https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js
 // @require      https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.12.0/dist/tf.min.js
