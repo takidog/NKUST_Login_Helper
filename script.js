@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         高科登入工具
 // @namespace    https://github.com/takidog/NKUST_Login_Helper
-// @version      1.0
+// @version      1.1
 // @description  自動辨識高科webap登入驗證碼，這種驗證碼你484在歧視科技發展
 // @author       Takidog
 // @match        https://webap0.nkust.edu.tw/nkust/index_main.html
@@ -67,7 +67,7 @@ function login_parser(response_html) {
 
 async function request_login(captchaCode) {
     let res = await axios.post(
-        "https://webap0.nkust.edu.tw/nkust/perchk.jsp",
+        "/nkust/perchk.jsp",
         new URLSearchParams({
             uid: frm1.uid.value,
             pwd: frm1.pwd.value,
@@ -200,7 +200,7 @@ function captchaImage() {
         window.captchaProxy.captchaCode = captchaCode;
     };
 
-    captchaImage.src = "https://webap0.nkust.edu.tw/nkust/validateCode.jsp";
+    captchaImage.src = "/nkust/validateCode.jsp";
 }
 
 window.addEventListener(
@@ -272,4 +272,3 @@ window.addEventListener(
     },
     false
 );
-
