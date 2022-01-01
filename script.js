@@ -2,7 +2,7 @@
 // @name         高科登入工具
 // @namespace    https://github.com/takidog/NKUST_Login_Helper
 // @version      1.1
-// @description  自動辨識高科webap登入驗證碼，這種驗證碼你484在歧視科技發展
+// @description  自動辨識高科webap登入驗證碼，讓自己更像機器人
 // @author       Takidog
 // @match        https://webap0.nkust.edu.tw/nkust/index_main.html
 // @match        https://webap0.nkust.edu.tw/nkust/index.html
