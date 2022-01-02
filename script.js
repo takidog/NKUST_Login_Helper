@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         高科登入工具
 // @namespace    https://github.com/takidog/NKUST_Login_Helper
-// @version      1.2
+// @version      1.3
 // @description  自動辨識高科webap登入驗證碼，讓自己更像機器人
 // @author       Takidog
 // @match        *://webap0.nkust.edu.tw/nkust/index_main.html
@@ -92,6 +92,7 @@ function login() {
 }
 
 function captchaImage() {
+    $.notify(`辨識中...`, { className: "info" });
     if (!checkInput()) {
         return false;
     }
