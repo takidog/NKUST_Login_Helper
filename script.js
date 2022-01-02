@@ -4,10 +4,12 @@
 // @version      1.1
 // @description  自動辨識高科webap登入驗證碼，讓自己更像機器人
 // @author       Takidog
-// @match        https://webap0.nkust.edu.tw/nkust/index_main.html
-// @match        https://webap0.nkust.edu.tw/nkust/index.html
-// @match        https://webap.nkust.edu.tw/nkust/index_main.html
-// @match        https://webap.nkust.edu.tw/nkust/index.html
+// @match        *://webap0.nkust.edu.tw/nkust/index_main.html
+// @match        *://webap0.nkust.edu.tw/nkust/index.html
+// @match        *://webap0.nkust.edu.tw/nkust/
+// @match        *://webap.nkust.edu.tw/nkust/index_main.html
+// @match        *://webap.nkust.edu.tw/nkust/index.html
+// @match        *://webap.nkust.edu.tw/nkust/
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @require      https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js
 // @require      https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.12.0/dist/tf.min.js
@@ -16,7 +18,7 @@
 // @grant        none
 // ==/UserScript==
 
-if (window.location.pathname == "/nkust/index.html") {
+if (window.location.pathname == "/nkust/index.html" || window.location.pathname == "/nkust/") {
     // 奇怪的頁面，用一層iframe套起來不知道在幹嘛
     // 會導致document抓不到
     window.location = '/nkust/index_main.html';
@@ -238,6 +240,8 @@ window.addEventListener(
         window.retry = 0;
 
         document.getElementById("chk").setAttribute("onclick", "login();");
+
+        $.notify("載入成功", { className: "success" });
 
         window.captchaProxy = new Proxy(
             {},
